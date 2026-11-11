@@ -7,7 +7,7 @@
             let px=py=gs=tc=20, ax=ay=10, xv=yv=0,trail=[], tail=5;
             const canvas = document.getElementById("gc"), ctx = canvas.getContext("2d");
             document.addEventListener("keydown", e => {
-  if(e.key=='ArrowLeft'&&xv!=1) {xv=-1;yv=0;} if(e.key=='ArrowUp'&&yv!=-1) {xv=0;yv=1;}
+  if(e.key=='ArrowLeft'&&xv!=1) {xv=-1;yv=0;} if(e.key=='ArrowUp'&&yv!=1) {xv=0;yv=-1;}
   if(e.key=='ArrowRight'&&xv!=-1) {xv=1;yv=0;} if(e.key=='ArrowDown'&&yv!=-1) {xv=0;yv=1;}
 });
   setInterval(() => {
@@ -21,7 +21,7 @@
 trail.push({x:px,y:py}); while(trail.length>tail) trail.shift();
     if(ax==px && ay==py) { tail++; ax=Math.floor(Math.random()*tc); ay=Math.floor(Math.random()*tc); } 
     ctx.fillStyle="red"; 
-    ctx.fillrect(ax*gs, ay*gs, gs-2, gs-2);
+    ctx.fillRect(ax*gs, ay*gs, gs-2, gs-2);
   }, 1000/15);
   
           </script>
